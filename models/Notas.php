@@ -43,8 +43,9 @@ class Notas
             $table = $db->prepare('SELECT * FROM notas');
             $table->execute();
             while ($notas = $table->fetch()) {
-                return $rows[] = $notas;
+                $rows[] = $notas;
             }
+            return $rows;
         }catch(PDOException $e){
           echo $e;
         }
