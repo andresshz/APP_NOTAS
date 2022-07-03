@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>App Notas</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="../resource/css/estilo.css">
+</head>
+<body>
+  
+    <h2>Agregue una nota</h2>
+    <form action="../Bean/Notas.bean.php" id="formulario" method="post">
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Ingrese un titulo</label>
+          <input type="text" class="form-control" id="titulo" name="titulo" >
+        </div>
+        <div class="mb-3">
+            <div class="form-floating">
+                <textarea class="form-control" id="texto" style="height: 100px" name="texto"></textarea>
+                <label for="texto">Ingrese contenido</label>
+            </div>
+        </div>
+        <input type="submit" id="btn" class="btn btn-success" value="Agregar">
+    </form>
+
+</body>
+</html>

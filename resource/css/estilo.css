@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#formulario{
+    width: 600px;
+    margin: 0 auto;
+}
+label{
+    font-size: 15px;
+}
+#btn{
+    font-size: 12px;
+    width: 580px;
+    margin-left: 10px;
+}
+h2{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
