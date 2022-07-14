@@ -9,10 +9,9 @@ $texto = $_POST['texto'];
 $ClassNotas = new Notas();
 $retorno = $ClassNotas->save($titulo,$texto);
 if($retorno === true){
-   
-    header("Location: ../views/bienvenido.html");
     echo '<script language="javascript">';
-    echo 'alert("Nota ingresada correctamente")';
+    echo('alert("Nota agregada correctamente")');
+    header("Location: ../views/show.notes.php");
     echo '</script>';
 }else{
     echo '<script language="javascript">';
@@ -20,7 +19,5 @@ if($retorno === true){
     echo '</script>';
     return;
 }
-
-
 
 ?>

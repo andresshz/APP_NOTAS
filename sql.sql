@@ -1,7 +1,7 @@
 CREATE DATABASE APP_NOTAS DEFAULT CHARACTER SET = 'utf8mb4';
 
 CREATE TABLE
-    notas(
+    notasText(
         id INT NOT NULL PRIMARY KEY,
         titulo VARCHAR(100) NOT NULL,
         texto VARCHAR(255) NOT NULL

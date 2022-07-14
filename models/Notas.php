@@ -6,14 +6,13 @@ require_once '../lib/Conexion.php';
 class Notas
 {
 
-
     /* Metodo para agragar nota */
     public function save($titulo, $texto)
     {
         $valor = null;
         $pdo = new DATABASE;
         $db = $pdo->conection();
-        $table = $db->prepare('INSERT INTO notas (titulo,texto) VALUES (:titulo,:texto)');
+        $table = $db->prepare('INSERT INTO notasText (titulo,texto) VALUES (:titulo,:texto)');
         $table->bindParam('titulo', $titulo);
         $table->bindParam('texto', $texto);
         $table->execute();
@@ -29,7 +28,7 @@ class Notas
 
         $pdo = new DATABASE;
         $db = $pdo->conection();
-        $table = $db->prepare('DELETE FROM notas WHERE id = :id');
+        $table = $db->prepare('DELETE FROM notasText WHERE id = :id');
         $table->bindParam('id', $id);
         $table->execute();
     }
@@ -40,7 +39,7 @@ class Notas
             $rows = null;
             $pdo = new DATABASE;
             $db = $pdo->conection();
-            $table = $db->prepare('SELECT * FROM notas');
+            $table = $db->prepare('SELECT * FROM notasText');
             $table->execute();
             while ($notas = $table->fetch()) {
                 $rows[] = $notas;
