@@ -5,8 +5,6 @@
 require_once '../lib/Conexion.php';
 class Notas
 {
-
-    /* Metodo para agragar nota */
     public function save($titulo, $texto)
     {
         $valor = null;
@@ -22,20 +20,24 @@ class Notas
             return $valor = false;
         }
     }
-    /* Metodo para eliminar una nota ingregasa */
+
     public function delete($id)
     {
-
-        $pdo = new DATABASE;
-        $db = $pdo->conection();
-        $table = $db->prepare('DELETE FROM notasText WHERE id = :id');
-        $table->bindParam('id', $id);
-        $table->execute();
+        try {
+            $pdo = new DATABASE;
+            $db = $pdo->conection();
+            $table = $db->prepare('DELETE FROM notasText WHERE id = :id');
+            $table->bindParam('id', $id);
+            $table->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo $e;
+        }
     }
-    /* Metodo para mostrar nota ingregasa */
+
     public function show_notes()
     {
-        try{
+        try {
             $rows = null;
             $pdo = new DATABASE;
             $db = $pdo->conection();
@@ -45,10 +47,9 @@ class Notas
                 $rows[] = $notas;
             }
             return $rows;
-        }catch(PDOException $e){
-          echo $e;
+        } catch (PDOException $e) {
+            echo $e;
         }
-       
     }
 }
 

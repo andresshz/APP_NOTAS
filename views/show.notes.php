@@ -14,6 +14,7 @@ $filas = $classNotas->show_notes();
   <!-- CSS only -->
   <link rel="icon" type="image/png" href="../resource/img/icon.png"/>
   <link rel="stylesheet" href="../resource/css/show.css">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
@@ -29,6 +30,9 @@ $filas = $classNotas->show_notes();
         <div class="contenido">
           <p><?php echo $fila['texto'] ?></p>
         </div>
+        <div class="eliminar">
+          <button class="btn btn-danger" onclick="Eliminar(<?php echo $fila['id'] ?>)"><i style="font-size:18px;" class='bx bx-trash'></i></button>
+        </div>
       </div>
     <?php } ?>
   </div>
@@ -36,5 +40,5 @@ $filas = $classNotas->show_notes();
   <button style="margin-left: 10%;" type="button" class="btn btn-success"><a style="text-decoration: none; color:black; " href="menu.html">Regresar</a></button>
  
 </body>
-
+<script src="../resource/js/main.js"></script>
 </html>
