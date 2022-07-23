@@ -1,3 +1,2 @@
-Hola mi nombre es Andrés Fernández tengo 19 años.
+APP de notas con php ocupando pdo.
 
-Este es un proyecto simple sobre agregar notas.
